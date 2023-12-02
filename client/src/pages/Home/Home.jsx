@@ -1,6 +1,7 @@
 import React from 'react';
 import Hero from '../../components/Hero';
 import Overview from '../../components/Overview';
+import Comments from '../../components/Comments';
 import Footer from '../../components/Footer';
 
 function Home() {
@@ -8,6 +9,7 @@ function Home() {
     <div>
     <Hero />
     <Overview/>
+    <Comments/>
     <Footer/>
     </div>
   )
