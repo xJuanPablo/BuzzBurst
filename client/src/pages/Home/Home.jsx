@@ -1,7 +1,7 @@
 import React from 'react';
 import Hero from '../../components/Hero';
 import Overview from '../../components/Overview';
-import Comments from '../../components/Comments';
+import Reviews from '../../components/Reviews';
 import Footer from '../../components/Footer';
 
 function Home() {
@@ -9,7 +9,7 @@ function Home() {
     <div>
     <Hero />
     <Overview/>
-    <Comments/>
+    <Reviews/>
     <Footer/>
     </div>
   )
