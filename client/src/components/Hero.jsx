@@ -1,8 +1,11 @@
-import React from 'react'
+import React from 'react';
 
 function Hero() {
   return (
-    <div>Hero</div>
+    <>
+    <div className='home-container'>
+    </div>
+    </>
   )
 }
 
