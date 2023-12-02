@@ -119,6 +119,40 @@ background: linear-gradient(90deg, rgb(80, 79, 107) 0%, rgba(178,61,212,1) 39%, 
   width: 450px;
 }
 
+/* Footer */
+
+.footer{
+  background-color: #1E1E1E;
+  color: #f1f1f1;
+  padding: 4rem;
+}
+
+.footer-container {
+  display: flex;
+  gap: 3rem;
+}
+
+.footer-col1 {
+  flex: 3;
+}
+
+.footer-col2 {
+  flex: 1;
+}
+.footer-col2 ul li{
+  list-style: none;
+}
+.footer-col2 ul li a{
+  text-decoration: none;
+  color: #f1f1f1;
+  white-space: nowrap;
+}
+
+.footer-col1-title {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+}
+
 @media screen and (max-width: 850px){
   .NavBarItems{
     z-index: 99;
@@ -183,5 +217,13 @@ background: linear-gradient(90deg, rgb(80, 79, 107) 0%, rgba(178,61,212,1) 39%, 
   }
   .hero-img{
     display: none;
+  }
+  /* Footer */
+  .footer-container {
+    flex-direction: column;
+      gap: 0rem;
+      & > div {
+        margin-top: 5rem;
+      }
   }
 }
