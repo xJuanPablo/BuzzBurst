@@ -3,7 +3,7 @@ import RotatingReview from './RotatingReviews';
 
 function Reviews() {
   return (
-    <div className='review-container'>
+    <div className='review-container' id='testimonials'>
       <h3 className='testimonials-h3'>Testimonials</h3>
       <RotatingReview/>
     </div>

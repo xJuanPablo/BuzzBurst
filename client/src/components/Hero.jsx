@@ -4,7 +4,7 @@ import HeroImg from '../assets/HeroImg.png'
 function Hero() {
   return (
     <>
-    <div className='hero-container'>
+    <div className='hero-container' id='hero'>
       <div className='tag-container'>
         <h3>
         Unleash the power of connection with BuzzBurst

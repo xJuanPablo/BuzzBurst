@@ -17,17 +17,17 @@ function NavBar() {
       id: 1,
       title: 'Home',
       icon: <LuMessagesSquare size={16} />,
-      url: 'google',
+      url: '#hero',
     }, {
       id: 2,
       title: 'About',
       icon: <IoMdInformationCircleOutline size={16} />,
-      url: 'google',
+      url: '#overview',
     }, {
       id: 3,
-      title: 'Reviews',
+      title: 'Testimonials',
       icon: <FaUserPen size={16} />,
-      url: 'google',
+      url: '#testimonials',
     }
   ]
 
@@ -46,7 +46,7 @@ function NavBar() {
         {NavData.map(({ id, title, icon, url }) => (
           <li key={id}><a href={url} className='nav-a'>{icon}&nbsp;{title}</a></li>
         ))}
-        <li><a href="google" className='action'>Login</a></li>
+        <li><a href="/login" className='action'>Login</a></li>
         <li><a href="google" className='action'>Sign Up</a></li>
       </ul>
     </nav>
