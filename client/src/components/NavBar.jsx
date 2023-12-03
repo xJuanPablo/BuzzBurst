@@ -17,17 +17,17 @@ function NavBar() {
       id: 1,
       title: 'Home',
       icon: <LuMessagesSquare size={16} />,
-      url: '#hero',
+      url: '/#hero',
     }, {
       id: 2,
       title: 'About',
       icon: <IoMdInformationCircleOutline size={16} />,
-      url: '#overview',
+      url: '/#overview',
     }, {
       id: 3,
       title: 'Testimonials',
       icon: <FaUserPen size={16} />,
-      url: '#testimonials',
+      url: '/#testimonials',
     }
   ]
 
