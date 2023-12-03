@@ -24,7 +24,7 @@ function Login({onIdSubmit}) {
         <Form className='w-100' onSubmit={handleSubmit}>
           <Form.Group>
             <Form.Label>
-              Enter Your ID
+              Enter Your Id
             </Form.Label>
             <Form.Control type='text' required ref={idRef} className='mb-2'>
             </Form.Control>
