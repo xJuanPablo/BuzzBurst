@@ -8,7 +8,7 @@ export const useConversations = () => {
   return useContext(ConversationsContext)
 }
 
-export function ConversationsProvider({children}) {
+export function ConversationsProvider({id, children}) {
 
   const [conversations, setConversations] = useLocalStorage('Conversations', []);
 
@@ -21,6 +21,31 @@ export function ConversationsProvider({children}) {
       return [...prevConversations, {recipients, messages: []}]
     })
   };
+
+  const addMessageToConversation = ({ recipients, text, sender }) => {
+    setConversations((prevConversations) => {
+      let madeChange = false;
+      const newMessage = { sender, text };
+      const newConversations = prevConversations.map((conversation) => {
+        if (arrayEquality(conversation.recipients, recipients)) {
+          madeChange = true;
+          return { ...conversation, messages: [...conversation.messages, newMessage] };
+        }
+        return conversation;
+      });
+  
+      if (madeChange) {
+        return newConversations;
+      } else {
+        return [...prevConversations, { recipients, messages: [newMessage] }];
+      }
+    });
+  };
+  
+
+  const sendMessage = (recipients, text) => {
+    addMessageToConversation({recipients, text, sender: id})
+  }
 
   const formattedConversation = conversations.map((conversation, index) => {
     const recipients = conversation.recipients.map(recipient => {
@@ -37,6 +62,7 @@ export function ConversationsProvider({children}) {
   const value = {
     conversations: formattedConversation,
     selectedConversation: formattedConversation[selectedConversationIndex],
+    sendMessage,
     selectedConversationIndex: setSelectedConversationIndex,
     createConversation
   }
@@ -47,3 +73,16 @@ export function ConversationsProvider({children}) {
     </ConversationsContext.Provider>
   )
 };
+
+const arrayEquality = (a,b) => {
+  if (a.length !== b.length){
+    return false
+  }
+
+  a.sort()
+  b.sort()
+
+  return a.every((element, index) => {
+    return element === b[index]
+  })
+}
